@@ -1,124 +1,158 @@
-# 📊 Amazon Product Analytics Dashboard
+# Amazon Product Analytics: Pricing, Discounts, Ratings & Customer Engagement
 
-## 📌 Project Overview
+## 📌 Overview
+This project is an end-to-end data analytics case study focused on analyzing Amazon product listings to understand how pricing, discount strategies, and customer feedback influence product performance and engagement.
 
-This project presents an end-to-end data analytics solution built using Power BI to analyze Amazon product data. The dashboard explores product performance, pricing strategies, category distribution, and customer engagement using ratings and review volume.
+Using Python for data cleaning, SQL for analysis, and Power BI for visualization, the project transforms raw product data into actionable business insights that can support pricing, merchandising, and promotional decisions.
 
-The objective is to transform raw product data into meaningful insights that support decision-making around pricing, discount strategies, and product positioning.
+---
+
+## 🎯 Business Problem
+Amazon offers a wide range of products across multiple categories, each with different pricing structures, discount strategies, and customer engagement levels.
+
+However, key questions remain:
+- Do higher discounts lead to better product performance?
+- Which categories generate the most customer engagement?
+- Are discounts being used efficiently across categories?
+- Which products outperform their category averages?
+
+This project aims to answer these questions using data-driven analysis.
 
 ---
 
 ## 🎯 Objectives
-
-- Analyze product distribution across categories
-- Evaluate customer engagement using review counts
-- Assess product quality using ratings and weighted metrics
-- Understand pricing and discount strategies
-- Identify top-performing products based on ratings and popularity
-
----
-
-## 🛠 Tools & Technologies
-
-- **Power BI** – Dashboard development and data modeling
-- **DAX (Data Analysis Expressions)** – KPI calculations and measures
-- **Python (Pandas)** – Data cleaning and preprocessing
-- **Git & GitHub** – Version control and project documentation
+- Analyze pricing and discount patterns across product categories
+- Evaluate the relationship between discounts, ratings, and engagement
+- Identify high-performing products and categories
+- Detect inefficiencies in discount strategies
+- Provide actionable business recommendations
 
 ---
 
-## 📂 Dataset
-
-The dataset contains Amazon product listings with key features such as:
+## 📊 Dataset
+The dataset consists of Amazon product listings with the following key fields:
 
 - Product Name
-- Category & Subcategory
-- Actual Price & Discounted Price
+- Category (Main & Sub Category)
+- Actual Price
+- Discounted Price
 - Discount Percentage
-- Product Ratings
-- Number of Reviews
-
-### Data Preparation Steps
-
-- Converted text-based prices and percentages into numeric values
-- Handled missing and inconsistent values
-- Created new features such as:
-  - Discount Amount
-  - Discount Percentage (calculated)
-  - Rating Buckets
-  - Price Bands
-- Split hierarchical category fields into structured columns
+- Rating
+- Rating Count (Customer Reviews)
 
 ---
 
-## 📊 Dashboard Structure
-
-The dashboard consists of three main pages:
-
----
-
-### 🔹 Executive Overview
-
-Provides a high-level summary of product performance:
-
-- Total Products
-- Average Rating
-- Total Reviews
-- Average Discount Percentage
-- Weighted Rating Score
-
-**Insights:**
-- Electronics dominate both product volume and customer engagement
-- Ratings are consistently high across most categories
-- Discount levels vary significantly, indicating different pricing strategies
+## 🛠️ Tools & Technologies
+- **Python (Pandas, NumPy)** → Data cleaning & preprocessing
+- **SQL** → Data querying and analysis
+- **Power BI** → Dashboard development & data visualization
+- **DAX** → Custom measures and KPIs
+- **GitHub** → Version control and project documentation
 
 ---
 
-### 🔹 Pricing & Discount Analysis
+## 🔄 Project Workflow
+1. Data Collection
+2. Data Cleaning (Python)
+   - Removed missing and inconsistent values
+   - Converted price fields to numeric format
+   - Standardized categories
+3. Feature Engineering
+   - Discount Amount
+   - Price Bands
+   - Rating Buckets
+   - Weighted Rating
+4. SQL Analysis
+   - Aggregations and category-level insights
+   - Identification of high-performing products
+5. Dashboard Development (Power BI)
+6. Insight Generation & Business Recommendations
 
-Focuses on pricing and discount behavior:
+---
 
-- Relationship between actual and discounted prices (scatter plot)
-- Average discount percentage by category
-- Price distribution across products
-- Total discount value by category
+## 📈 Dashboard Overview
+
+### Executive Overview
+- Total Products, Average Rating, Total Reviews
+- Category distribution
+- Customer engagement by category
+
+### Pricing & Discount Analysis
+- Relationship between actual price and discounted price
+- Discount trends across categories
 - Top discounted products
 
----
-
-### 🔹 Product Performance
-
-Highlights high-performing products:
-
-- Top 10 products by review count
-- Highly rated products with strong engagement
-- Rating distribution across products
-- Product-level detail table
+### Product Performance
+- Top products by performance score
+- Rating distribution
+- Products outperforming category averages
 
 ---
 
-## 📈 Key Metrics
+## 🔍 Key Insights
 
-- **Total Products** – Total number of products analyzed
-- **Total Reviews** – Indicator of customer engagement
-- **Average Rating** – Overall product quality
-- **Weighted Rating** – Rating adjusted for review volume
-- **Average Discount %** – Pricing strategy indicator
-
----
-
-## 💡 Key Insights
-
-- Electronics category generates the highest engagement and product volume
-- High discounts do not always lead to higher ratings
-- Products with more reviews tend to have more stable ratings
-- Most products fall within mid-range pricing categories
-- A small number of products drive the majority of customer engagement
+- **Electronics dominates customer engagement**, contributing the highest number of reviews across all categories.
+- **Higher discounts do not consistently lead to better ratings**, indicating that discounting alone does not improve perceived product quality.
+- **Customer engagement is concentrated among a small number of products**, suggesting a long-tail distribution.
+- **Pricing and discount behavior varies significantly across categories**, requiring category-specific strategies.
+- **Weighted ratings provide a more reliable performance metric** than simple averages.
 
 ---
 
-## 🚀 How to Use
+## 💡 Business Recommendations
 
-1. Clone this repository:
-```bash
-git clone https://github.com/dd4real2k/amazon-analytics-project.git
+- Focus promotional efforts on **high-engagement categories** such as Electronics
+- Avoid excessive discounting in **low-performing categories**
+- Use **weighted rating + review count** to identify “hero products”
+- Apply **category-specific pricing strategies** instead of uniform discounting
+- Monitor discount efficiency to ensure **profitability is not sacrificed unnecessarily**
+
+---
+
+## ⚠️ Limitations
+
+- Review count is used as a proxy for customer engagement and does not directly measure sales or revenue
+- The dataset represents a snapshot and does not capture time-based trends
+- Ratings may be biased due to uneven customer participation across categories
+
+---
+
+## 📚 Data Dictionary
+
+| Column | Description |
+|------|------------|
+| actual_price | Original product price |
+| discounted_price | Price after discount |
+| discount_percentage | Percentage reduction |
+| rating | Average customer rating |
+| rating_count | Number of reviews |
+| main_category | Product category |
+| sub_category | Product subcategory |
+
+---
+
+## 🚀 Future Improvements
+
+- Add time-series analysis for trend detection
+- Build a recommendation system for similar products
+- Incorporate sales or revenue data for deeper analysis
+- Perform A/B testing on discount strategies
+
+---
+
+## 🧠 Key Skills Demonstrated
+
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- SQL Querying & Aggregation
+- Data Visualization (Power BI)
+- Business Insight Generation
+- Analytical Thinking
+
+---
+
+## 📎 Project Files
+- Power BI Dashboard (.pbix)
+- Python Notebook (Data Cleaning)
+- SQL Queries (Analysis)
+- Dataset (CSV)
